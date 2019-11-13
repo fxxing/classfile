@@ -34,8 +34,8 @@ class Instruction(Object):
             align = stream.tell() % 4
             stream.read_bytes((4 - align) if align else 0)
             self.default = stream.read_u4()
-            self.low = stream.read_u4()
-            self.high = stream.read_u4()
+            self.low = stream.read_s4()
+            self.high = stream.read_s4()
             self.jump_offsets = [stream.read_u4() for _ in range(self.high - self.low + 1)]
             raise Exception('verify this')
         elif self.NAME == 'wide':

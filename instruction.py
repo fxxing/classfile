@@ -42,7 +42,7 @@ class Instruction(Object):
             self.opcode = stream.read_u1()
             self.index = stream.read_u2()
             # noinspection PyUnresolvedReferences
-            if self.opcode == Ins.iinc.OPCODE:
+            if self.opcode == Ins.iinc[0].OPCODE:
                 self.const = stream.read_u2()
         elif self.OPERANDS:
             for f in self.OPERANDS.split(', '):

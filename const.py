@@ -76,7 +76,7 @@ class NameAndType(Constant):
 
 class MethodHandle(Constant):
     def __init__(self, stream: Stream):
-        self.reference_kind = stream.read_u2()
+        self.reference_kind = stream.read_u1()
         self.reference_index = stream.read_u2()
 
 

@@ -12,6 +12,8 @@ class Stream(object):
     def tell(self):
         return self.file.tell()
 
+    def read_s4(self) ->int:
+        return int.from_bytes(self.file.read(4), byteorder="big", signed=True)
     def read_u1(self) -> u1:
         return int.from_bytes(self.file.read(1), byteorder='big', signed=False)
 
